@@ -8,7 +8,6 @@ Complex = function (x, y) {
 
 Math.complex = Complex;
 
-
 //addition function
 Complex.prototype.sum = function(x, y) {
 	var r = x.re + y.re;
@@ -32,7 +31,7 @@ Complex.prototype.difference = function(x, y) {
 	
 }
 //multiplication function
-Complex.prototype.product = function(x, y) {
+Complex.prototype.multiply = function(x, y) {
 
 	var r = (x.r * y.r) + (x.i * y.i);
 	var i = (x.r * y.i) + (x.i * y.r);
@@ -48,9 +47,9 @@ Complex.prototype.division = function(x, y) {
 
 	var z = {re: y.r, im: -(y.i)};
 
-	if (z!==0){
-		var a = product(x,z);
-		var b = product(y,z);
+	if (z !== 0){
+		var a = multiply(x,z);
+		var b = multiply(y,z);
 
 		var r = (a.re) / (b.re);
 		var i = (a.im) / (b.re);
