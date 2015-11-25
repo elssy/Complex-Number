@@ -1,9 +1,6 @@
-Complex = function (x, y) {
-
-    return {
-        re: x,
-        im: y
-    }
+function Complex (x, y) {
+	this.re = x;
+	this.im = y;
 };
 
 Math.complex = Complex;
@@ -11,59 +8,50 @@ Math.complex = Complex;
 //addition function
 Complex.prototype.sum = function(x, y) {
 	var r = x.re + y.re;
-	var i = x.i + y.i;
+	var i = x.im + y.im;
 
-	return {
-		re: r,
-		im: i
-	}
-	
+	var result =  new Complex(r, i);
+	return result;
 }
 //subtraction function
 Complex.prototype.difference = function(x, y) {
 	var r = x.re - y.re;
-	var i = x.i - y.i;
+	var i = x.im - y.im;
 
-	return {
-		re: r,
-		im: i
-	}
+	var result =  new Complex(r, i);
+	return result;
+
 	
 }
 //multiplication function
 Complex.prototype.multiply = function(x, y) {
 
-	var r = (x.r * y.r) + (x.i * y.i);
-	var i = (x.r * y.i) + (x.i * y.r);
+	var r = (x.re * y.re) + (x.im * y.im);
+	var i = (x.re * y.im) + (x.im * y.re);
 
-	return {
-		re: r,
-		im: i
-	}
+	var res = new Complex(r, i);
+
+	return res;
 	
 }
 //division function
 Complex.prototype.division = function(x, y) {
 
-	var z = {re: y.r, im: -(y.i)};
+	var z = {re: y.re, im: -(y.im)};
 
 	if (z !== 0){
-		var a = multiply(x,z);
-		var b = multiply(y,z);
+		var a = y.multiply(x,z);
+		var b = y.multiply(y,z);
 
 		var r = (a.re) / (b.re);
 		var i = (a.im) / (b.re);
 
-		return {
-			re: r,
-			im: i
+		var res = new Complex(r, i);
 
-		}
+		return res;
 
 	} else {
 		console.log("Cannot be divided by 0!");
 	}
 	
 }
-
-console.log(Math.complex(2, 3));
