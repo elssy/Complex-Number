@@ -26,18 +26,18 @@ Complex.prototype.difference = function(x, y) {
 //multiplication function
 Complex.prototype.multiply = function(x, y) {
 
-	var r = (x.re * y.re) + (x.im * y.im);
+	var r = (x.re * y.re) - (x.im * y.im);
 	var i = (x.re * y.im) + (x.im * y.re);
 
-	var res = new Complex(r, i);
+	var result = new Complex(r, i);
 
-	return res;
+	return result;
 	
 }
 //division function
 Complex.prototype.division = function(x, y) {
 
-	var z = {re: y.re, im: -(y.im)};
+	var z = {re: y.re, im: - (y.im)};
 
 	if (z !== 0){
 		var a = y.multiply(x,z);
@@ -46,9 +46,9 @@ Complex.prototype.division = function(x, y) {
 		var r = (a.re) / (b.re);
 		var i = (a.im) / (b.re);
 
-		var res = new Complex(r, i);
+		var result = new Complex(r, i);
 
-		return res;
+		return result;
 
 	} else {
 		console.log("Cannot be divided by 0!");

@@ -2,10 +2,42 @@
 <html lang="en">
 <head>
     <title>Complex Number</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    
     
     <script type="text/javascript" src ="complex.js"></script>
-    
-    
+    <div class="top">
+      <h3>Complex Number Calculator</h3>
+
+        <a href="https://github.com/elssy/Complex-Number/blob/master/complex.js">My Code</a> 
+        <a href="https://github.com/elssy/Complex-Number/blob/master/testing/jasmine/spec/ComplexSpec.js">Unit Tests </a>
+    </div>
+
+    <div class="rest">
+             <label>Complex Number 1</label><input type = "text" class="text" placeholder = "a+b"><br><br>
+            <label>Complex Number 2</label><input type = "text" class="text" placeholder = "a+b"><br><br>
+            <label>Result</label><br><br>
+
+            <textarea id="text" name="result" readonly>
+             
+            </textarea> <br><br>
+
+            <button type="button" class="btn" onclick="Complex('sum')">Add</button>
+            <button type="button" class="btn" onclick="Complex('difference')">Subtract</button><br><br><br>
+            <button type="button" class="btn"  onclick="Complex('multiply')">Multiply</button>
+            <button type="button" class="btn" onclick="Complex('division')">Divide</button>
+            
+    </div>
+        <script type="text/javascript" src ="complex.js">
+            
+                  $(document).ready(function() {
+                    $('button').on("click", function() {
+                      $("textarea").text(result + "i");
+                    });
+                  });
+                
+        </script>
 </head>
 <body>
    

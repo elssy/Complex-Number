@@ -11,20 +11,20 @@ describe("Complex-Number", function () {
   it("should find addition of two complex numbers", function() {
     var x = new Complex(8, 9);
     
-    var y = new Complex(2, 9);
+    var y = new Complex(2, 1);
    
     var ans = x.sum(x, y);
     expect(ans.re).toEqual(10);
-    expect(ans.im).toEqual(18);
+    expect(ans.im).toEqual(10);
   });
 
   it("should find difference of two complex numbers ", function() {
     var x = new Complex(8, 9);
-    var y = new Complex(2, 9);
+    var y = new Complex(2, 1);
 
     ans = x.difference(x, y);
     expect(ans.re).toEqual(6);
-    expect(ans.im).toEqual(0);
+    expect(ans.im).toEqual(8);
   });
 
   it("should multiply two complex numbers ", function() {
@@ -32,7 +32,7 @@ describe("Complex-Number", function () {
     var y = new Complex(2, 1);
 
     ans = x.multiply(x, y);
-    expect(ans.re).toEqual(25);
+    expect(ans.re).toEqual(7);
     expect(ans.im).toEqual(26);
   });  
 
@@ -42,7 +42,7 @@ describe("Complex-Number", function () {
     var y = new Complex(3, -1);
 
     ans = x.division(x, y);
-    expect(ans.re).toEqual(1.75);
-    expect(ans.im).toEqual(1.25);
+    expect(ans.re).toEqual(1);
+    expect(ans.im).toEqual(1);
   }); 
 });
