@@ -6,17 +6,17 @@ function Complex (x, y) {
 Math.complex = Complex;
 
 //addition function
-Complex.prototype.sum = function(x, y) {
-	var r = x.re + y.re;
-	var i = x.im + y.im;
+Complex.prototype.sum = function(y) {
+	var r = this.re + y.re;
+	var i = this.im + y.im;
 
 	var result =  new Complex(r, i);
 	return result;
 }
 //subtraction function
-Complex.prototype.difference = function(x, y) {
-	var r = x.re - y.re;
-	var i = x.im - y.im;
+Complex.prototype.difference = function(y) {
+	var r = this.re - y.re;
+	var i = this.im - y.im;
 
 	var result =  new Complex(r, i);
 	return result;
@@ -24,10 +24,10 @@ Complex.prototype.difference = function(x, y) {
 	
 }
 //multiplication function
-Complex.prototype.multiply = function(x, y) {
+Complex.prototype.multiply = function(y) {
 
-	var r = (x.re * y.re) - (x.im * y.im);
-	var i = (x.re * y.im) + (x.im * y.re);
+	var r = (this.re * y.re) - (this.im * y.im);
+	var i = (this.re * y.im) + (this.im * y.re);
 
 	var result = new Complex(r, i);
 
@@ -35,12 +35,12 @@ Complex.prototype.multiply = function(x, y) {
 	
 }
 //division function
-Complex.prototype.division = function(x, y) {
+Complex.prototype.division = function(y) {
 
 	var z = {re: y.re, im: - (y.im)};
 
 	if (z !== 0){
-		var a = y.multiply(x,z);
+		var a = y.multiply(z);
 		var b = y.multiply(y,z);
 
 		var r = (a.re) / (b.re);

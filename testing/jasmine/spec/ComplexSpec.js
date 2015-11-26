@@ -13,7 +13,7 @@ describe("Complex-Number", function () {
     
     var y = new Complex(2, 1);
    
-    var ans = x.sum(x, y);
+    var ans = x.sum(y);
     expect(ans.re).toEqual(10);
     expect(ans.im).toEqual(10);
   });
@@ -22,7 +22,7 @@ describe("Complex-Number", function () {
     var x = new Complex(8, 9);
     var y = new Complex(2, 1);
 
-    ans = x.difference(x, y);
+    ans = x.difference(y);
     expect(ans.re).toEqual(6);
     expect(ans.im).toEqual(8);
   });
@@ -31,7 +31,7 @@ describe("Complex-Number", function () {
     var x = new Complex(8, 9);
     var y = new Complex(2, 1);
 
-    ans = x.multiply(x, y);
+    ans = x.multiply(y);
     expect(ans.re).toEqual(7);
     expect(ans.im).toEqual(26);
   });  
@@ -41,7 +41,7 @@ describe("Complex-Number", function () {
     var x = new Complex(4, 2);
     var y = new Complex(3, -1);
 
-    ans = x.division(x, y);
+    ans = x.division(y);
     expect(ans.re).toEqual(1);
     expect(ans.im).toEqual(1);
   }); 
